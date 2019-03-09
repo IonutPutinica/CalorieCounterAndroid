@@ -18,5 +18,12 @@
         android:textStyle="bold"
         android:textColor="#ff3a382f"
         app:layout_constraintTop_toTopOf="parent" />
+    
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_below="@+id/titleText"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerHorizontal="true"/>
 
 </RelativeLayout>
