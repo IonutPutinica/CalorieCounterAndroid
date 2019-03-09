@@ -4,10 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#8BC34A"
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
     android:paddingTop="16dp"
     android:paddingBottom="16dp"
     tools:context=".DisplayMealsActivity">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:background="#00ACC1"
+        android:paddingBottom="12dp"
+        android:paddingTop="12dp"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"></LinearLayout>
 
 </RelativeLayout>
