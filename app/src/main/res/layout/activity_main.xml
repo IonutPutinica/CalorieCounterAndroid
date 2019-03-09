@@ -8,12 +8,15 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/titleText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:text="@string/title_text"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="34dp"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="#ff3a382f"
         app:layout_constraintTop_toTopOf="parent" />
 
 </RelativeLayout>
