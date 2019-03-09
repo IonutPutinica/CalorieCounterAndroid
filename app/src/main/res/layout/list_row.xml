@@ -27,4 +27,12 @@
         android:textColor="#424242"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+
+    <ImageView
+        android:id="@+id/thumbnail"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/meal"
+        android:layout_width="90dp"
+        android:layout_height="90dp" />
 </RelativeLayout>
