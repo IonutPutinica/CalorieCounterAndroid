@@ -8,7 +8,7 @@
     <string name="submit_text">Submit the meal</string>
     <string name="delete_item">Delete Item</string>
     <string name="share_title">Share</string>
-    <string name="food_total_text">Total calorie intake for today</string>
+    <string name="food_total_text">Total calorie intake for today:</string>
     <string name="cal_text">Cal.</string>
     <string name="food_items_num">Food Items:</string>
 </resources>
