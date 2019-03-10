@@ -64,6 +64,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
+        <Button
+            android:id="@+id/detailsShareButton"
+            android:layout_gravity="right"
+            android:background="@drawable/share"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="45dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp" />
+
     </LinearLayout>
 
 </RelativeLayout>
