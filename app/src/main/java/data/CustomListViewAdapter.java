@@ -3,6 +3,8 @@ import android.app.Activity;
 import android.content.Context;
 import android.widget.ArrayAdapter;
 import java.util.ArrayList;
+import android.view.View;
+import android.view.ViewGroup;
 
 import model.Meal;
 
@@ -18,5 +20,34 @@ public class CustomListViewAdapter extends ArrayAdapter<Meal> {
         notifyDataSetChanged();
     }
 
-    
+    @Override
+    public int getCount()
+    {
+        return mealList.size();
+    }
+
+    @Override
+    public Meal getItem(int position)
+    {
+        return mealList.get(position);
+    }
+
+    @Override
+    public int getPosition(Meal item)
+    {
+        return super.getPosition(item);
+    }
+
+    @Override
+    public long getItemId(int position)
+    {
+        return super.getItemId(position);
+    }
+
+    @Override
+    public View getView(int position, View convertView ,ViewGroup parent)
+    {
+        return super.getView(position,convertView,parent);
+    }
+
 }
