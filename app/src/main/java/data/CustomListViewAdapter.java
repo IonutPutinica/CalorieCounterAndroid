@@ -1,15 +1,18 @@
 package data;
 import android.app.Activity;
 import android.content.Context;
-import android.widget.ArrayAdapter;
-import java.util.ArrayList;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
+import java.util.ArrayList;
 
-import model.Meal;
+
+import model.*;
 
 public class CustomListViewAdapter extends ArrayAdapter<Meal> {
     private int layoutResource;
@@ -50,7 +53,53 @@ public class CustomListViewAdapter extends ArrayAdapter<Meal> {
     @Override
     public View getView(int position, View convertView ,ViewGroup parent)
     {
-        return super.getView(position,convertView,parent);
+
+        View row = convertView;
+        ViewHolder holder = null;
+
+        if ( row == null || (row.getTag() == null)) {
+
+            LayoutInflater inflater = LayoutInflater.from(activity);
+            row = inflater.inflate(layoutResource, null);
+
+            holder = new ViewHolder();
+
+            holder.mealName = (TextView) row.findViewById(R.id.name);
+            holder.mealDate = (TextView) row.findViewById(R.id.dateText);
+            holder.mealCalories = (TextView) row.findViewById(R.id.calories);
+
+            row.setTag(holder);
+
+        }else {
+
+            holder = (ViewHolder) row.getTag();
+        }
+
+
+        holder.meal = getItem(position);
+
+        holder.mealName.setText(holder.meal.getMealName());
+        holder.mealDate.setText(holder.meal.getRecordDate());
+        holder.mealCalories.setText(String.valueOf(holder.meal.getCalories()));
+
+        final ViewHolder finalHolder = holder;
+        row.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+
+
+            }
+        });
+
+
+
+
+
+
+        return row;
+
     }
 
     public class ViewHolder {
