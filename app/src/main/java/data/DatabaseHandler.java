@@ -3,6 +3,7 @@ package data;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.database.Cursor;
 
 import java.util.ArrayList;
 
@@ -36,5 +37,19 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     //create a new  table in case there is a new one
         onCreate(db);
+    }
+    //get total number of itemes that the user has saved within the application
+    public int getTotalItems()
+    {
+    int totalItems=0;
+    String query= "SELECT * FROM "+ Constants.TABLE_NAME;
+    SQLiteDatabase dba= this.getReadableDatabase();
+    Cursor cursor= dba.rawQuery(query,null);
+
+    totalItems=cursor.getCount();
+    cursor.close();
+
+
+    return totalItems;
     }
 }
