@@ -4,6 +4,10 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.Cursor;
+import android.content.ContentValues;
+import android.util.Log;
+import java.text.DateFormat;
+import java.util.Date;
 
 import java.util.ArrayList;
 
@@ -70,7 +74,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     //delete a meal from the list
     //the id parsing is used to find the item
-    public void deleteFood(int id)
+    public void deleteMeal(int id)
     {
         SQLiteDatabase dba= this.getWritableDatabase();
         //the table is passed in
@@ -79,4 +83,25 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
         dba.close();
     }
+
+    public void addMeal(Meal meal)
+    {
+        SQLiteDatabase dba = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(Constants.MEAL_NAME, meal.getMealName());
+        values.put(Constants.MEAL_CALORIES_NAME, meal.getCalories());
+        //asks the android device for the time
+        values.put(Constants.DATE_NAME, System.currentTimeMillis());
+
+        dba.insert(Constants.TABLE_NAME, null, values);
+
+        //used to create a verbose log
+        Log.v("Added Meal item", "Confirmation");
+
+        dba.close();
+    }
+
+    //get all meals from the database
+    
 }
