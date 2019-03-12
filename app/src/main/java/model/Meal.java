@@ -4,17 +4,17 @@ import java.io.Serializable;
 
 public class Meal implements Serializable {
     private static final long serialVersionUID = 10L;
-    private String foodName;
+    private String mealName;
     private int calories;
-    private int foodId;
+    private int mealId;
     private String recordDate;
 
     public Meal(String meal, int cals, int id, String date)
 
     {
-        foodName=meal;
+        mealName=meal;
         calories=cals;
-        foodId=id;
+        mealId=id;
         recordDate=date;
     }
 
@@ -26,12 +26,12 @@ public class Meal implements Serializable {
         return serialVersionUID;
     }
 
-    public String getFoodName() {
-        return foodName;
+    public String getMealName() {
+        return mealName;
     }
 
-    public void setFoodName(String foodName) {
-        this.foodName = foodName;
+    public void setMealName(String mealName) {
+        this.mealName = mealName;
     }
 
     public int getCalories() {
@@ -42,12 +42,12 @@ public class Meal implements Serializable {
         this.calories = calories;
     }
 
-    public int getFoodId() {
-        return foodId;
+    public int getMealId() {
+        return mealId;
     }
 
-    public void setFoodId(int foodId) {
-        this.foodId = foodId;
+    public void setMealId(int mealId) {
+        this.mealId = mealId;
     }
 
     public String getRecordDate() {
