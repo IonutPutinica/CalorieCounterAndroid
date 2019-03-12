@@ -67,4 +67,16 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         dba.close();
         return cals;
     }
+
+    //delete a meal from the list
+    //the id parsing is used to find the item
+    public void deleteFood(int id)
+    {
+        SQLiteDatabase dba= this.getWritableDatabase();
+        //the table is passed in
+        dba.delete(Constants.TABLE_NAME, Constants.KEY_ID + " = ?",
+                new String[]{String.valueOf(id)});
+
+        dba.close();
+    }
 }
