@@ -3,11 +3,24 @@ package model;
 import java.io.Serializable;
 
 public class Meal implements Serializable {
-    private static final long serialVersionUID=10L;
+    private static final long serialVersionUID = 10L;
     private String foodName;
     private int calories;
     private int foodId;
     private String recordDate;
+
+    public Meal(String meal, int cals, int id, String date)
+
+    {
+        foodName=meal;
+        calories=cals;
+        foodId=id;
+        recordDate=date;
+    }
+
+    public Meal() {
+
+    }
 
     public static long getSerialVersionUID() {
         return serialVersionUID;
