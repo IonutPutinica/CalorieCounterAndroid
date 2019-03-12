@@ -45,11 +45,26 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     String query= "SELECT * FROM "+ Constants.TABLE_NAME;
     SQLiteDatabase dba= this.getReadableDatabase();
     Cursor cursor= dba.rawQuery(query,null);
-
     totalItems=cursor.getCount();
     cursor.close();
 
 
     return totalItems;
+    }
+
+    //return the total calorie intake for the day
+    public int totalCalories()
+    {
+        int cals=0;
+        SQLiteDatabase dba= this.getReadableDatabase();
+        String query= "SELECT SUM( " + Constants.MEAL_CALORIES_NAME+ " )" + "FROM " + Constants.TABLE_NAME;
+        Cursor cursor= dba.rawQuery(query,null);
+        if(cursor.moveToFirst())
+        {
+            cals=cursor.getInt(0);
+        }
+        cursor.close();
+        dba.close();
+        return cals;
     }
 }
