@@ -2,8 +2,8 @@ package com.calCounterapplicaton.app;
 
 
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,7 +16,7 @@ import model.*;
 import data.DatabaseHandler;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends AppCompatActivity {
     private EditText mealName, mealCals;
     private Button submitButton;
     private DatabaseHandler dba;
@@ -70,7 +70,7 @@ public class MainActivity extends ActionBarActivity {
             mealCals.setText("");
 
             //take users to next screen (display all entered items)
-            startActivity(new Intent(MainActivity.this, DisplayFoodsActivity.class));
+            startActivity(new Intent(MainActivity.this, DisplayMealsActivity.class));
         }
 
     }
