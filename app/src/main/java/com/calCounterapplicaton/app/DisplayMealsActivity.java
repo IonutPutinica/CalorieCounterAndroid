@@ -7,6 +7,8 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import data.CustomListViewAdapter;
 import data.DatabaseHandler;
+import android.view.Menu;
+import android.view.MenuItem;
 import model.Meal;
 import util.Utils;
 
@@ -64,5 +66,11 @@ public class DisplayMealsActivity extends AppCompatActivity {
         mealAdapter=new CustomListViewAdapter(DisplayMealsActivity.this, R.layout.list_row, dbMeals);
         listView.setAdapter(mealAdapter);
         mealAdapter.notifyDataSetChanged();
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_display_foods, menu);
+        return true;
     }
 }
