@@ -29,4 +29,12 @@ public class DisplayMealsActivity extends AppCompatActivity {
 
         refreshData();
     }
+
+    private void refreshData() {
+        dbMeals.clear();
+        dba= new DatabaseHandler(getApplicationContext());
+        ArrayList<Meal> mealsFromDB = dba.getMeals();
+        int calsValue = dba.totalCalories();
+        int totalItems= dba.getTotalItems();
+    }
 }
