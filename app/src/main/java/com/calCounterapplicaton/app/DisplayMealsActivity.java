@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import data.CustomListViewAdapter;
 import data.DatabaseHandler;
 import model.Meal;
+import util.Utils;
 
 public class DisplayMealsActivity extends AppCompatActivity {
 
@@ -36,5 +37,32 @@ public class DisplayMealsActivity extends AppCompatActivity {
         ArrayList<Meal> mealsFromDB = dba.getMeals();
         int calsValue = dba.totalCalories();
         int totalItems= dba.getTotalItems();
+
+        String formattedValue= Utils.formatNumber(calsValue);
+        String formattedItems = Utils.formatNumber(totalItems);
+
+        totalCals.setText("Total Calories: "+ formattedValue);
+        totalMeals.setText("Total Meals: " + formattedItems);
+
+        for(int i=0;i<mealsFromDB.size();i++)
+        {
+            String name=mealsFromDB.get(i).getMealName();
+            String dateText=mealsFromDB.get(i).getRecordDate();
+            int cals= mealsFromDB.get(i).getCalories();
+            int mealId=mealsFromDB.get(i).getMealId();
+
+            myMeal=new Meal();
+            myMeal.setMealName(name);
+            myMeal.setRecordDate(dateText);
+            myMeal.setCalories(cals);
+            myMeal.setMealId(mealId);
+            dbMeals.add(myMeal);
+
+        }
+        dba.close();
+        //setting up the adapter
+        mealAdapter=new CustomListViewAdapter(DisplayMealsActivity.this, R.layout.list_row, dbMeals);
+        listView.setAdapter(mealAdapter);
+        mealAdapter.notifyDataSetChanged();
     }
 }
