@@ -1,12 +1,14 @@
 package data;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
-
+import android.os.Bundle;
+import com.calCounterapplicaton.app.MealItemDetailsActivity;
 import com.calCounterapplicaton.app.R;
 
 import java.util.ArrayList;
@@ -86,16 +88,18 @@ public class CustomListViewAdapter extends ArrayAdapter<Meal> {
             @Override
             public void onClick(View v) {
 
+                Intent i = new Intent(activity, MealItemDetailsActivity.class);
 
 
+                Bundle mBundle = new Bundle();
+                mBundle.putSerializable("userObj", finalHolder.meal);
+                i.putExtras(mBundle);
+
+
+                activity.startActivity(i);
 
             }
         });
-
-
-
-
-
 
         return row;
 
