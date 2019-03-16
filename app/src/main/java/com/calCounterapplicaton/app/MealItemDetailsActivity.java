@@ -10,7 +10,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.view.MenuItem;
+import data.DatabaseHandler;
 import model.Meal;
 
 public class MealItemDetailsActivity extends AppCompatActivity {
@@ -78,6 +81,49 @@ public class MealItemDetailsActivity extends AppCompatActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_meal_item_details, menu);
         return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.deleteItem) {
+
+            AlertDialog.Builder alert = new AlertDialog.Builder(MealItemDetailsActivity.this);
+            alert.setTitle("Delete?");
+            alert.setMessage("Are you sure you want to delete this item?");
+            alert.setNegativeButton("No", null);
+            alert.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+
+                    DatabaseHandler dba = new DatabaseHandler(getApplicationContext());
+                    dba.deleteMeal(mealId);
+
+                    Toast.makeText(getApplicationContext(), "Food Item Deleted!", Toast.LENGTH_LONG)
+                            .show();
+
+                    startActivity(new Intent(MealItemDetailsActivity.this, DisplayMealsActivity.class));
+
+
+                    //remove this activity from activity stack
+                    MealItemDetailsActivity.this.finish();
+
+
+                }
+            });
+            alert.show();
+        }
+
+
+
+
+
+
+        return super.onOptionsItemSelected(item);
     }
 
 }
