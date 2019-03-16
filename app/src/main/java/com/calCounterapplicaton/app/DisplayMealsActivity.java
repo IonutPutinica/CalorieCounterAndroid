@@ -2,17 +2,18 @@ package com.calCounterapplicaton.app;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.ListView;
-import android.widget.TextView;
-import java.util.ArrayList;
-import data.CustomListViewAdapter;
-import data.DatabaseHandler;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ListView;
+import android.widget.TextView;
+
+import java.util.ArrayList;
+
+import data.CustomListViewAdapter;
+import data.DatabaseHandler;
+import model.Meal;
 import util.Utils;
-import model.*;
-import java.lang.reflect.Array;
-import android.util.log;
+
 
 public class DisplayMealsActivity extends AppCompatActivity {
 
