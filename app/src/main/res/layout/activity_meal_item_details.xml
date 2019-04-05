@@ -13,7 +13,7 @@
 
     <ImageView
         android:id="@+id/logo"
-        android:src="@drawable/meal"
+        android:src="@drawable/porkmeal"
         android:layout_centerHorizontal="true"
         android:layout_width="180dp"
         android:layout_height="180dp" />
