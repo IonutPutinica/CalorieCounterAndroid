@@ -1,0 +1,35 @@
+{
+  "project_info": {
+    "project_number": "802469640056",
+    "firebase_url": "https://caloriecounter-a8998.firebaseio.com",
+    "project_id": "caloriecounter-a8998",
+    "storage_bucket": "caloriecounter-a8998.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:802469640056:android:fc5f8e0ae9d38185",
+        "android_client_info": {
+          "package_name": "com.calCounterapplicaton.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC01YthJyEv_m-GdyqR8E9L-IRjrCYwMaU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "802469640056-rgftrntahndonnj4kkiv3ircv5935neq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
