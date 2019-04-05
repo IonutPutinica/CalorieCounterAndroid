@@ -29,7 +29,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+        // Obtain the FirebaseAnalytics instance.
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
         dba = new DatabaseHandler(MainActivity.this);
 
         mealName = (EditText) findViewById(R.id.foodEditText);
