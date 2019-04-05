@@ -13,7 +13,7 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:background="#00ACC1"
+        android:background="#FFFAFA"
         android:paddingBottom="12dp"
         android:paddingTop="12dp"
         android:orientation="horizontal"
