@@ -15,6 +15,7 @@ import model.Meal;
 import util.Utils;
 
 
+
 public class DisplayMealsActivity extends AppCompatActivity {
 
     private DatabaseHandler dba;
