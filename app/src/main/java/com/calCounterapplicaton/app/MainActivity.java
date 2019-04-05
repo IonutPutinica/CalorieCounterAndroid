@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText mealName, mealCals;
     private Button submitButton;
     private DatabaseHandler dba;
-    private FirebaseAnalytics mFirebaseAnalytics;
+    private FirebaseAnalytics mFirebaseAnlytics;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // Obtain the FirebaseAnalytics instance.
-        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
+        mFirebaseAnlytics = FirebaseAnalytics.getInstance(this);
         dba = new DatabaseHandler(MainActivity.this);
 
         mealName = (EditText) findViewById(R.id.foodEditText);
@@ -43,9 +43,20 @@ public class MainActivity extends AppCompatActivity {
 
                 saveDataToDB();
 
+                //firebase logevent
+
+                Bundle bundle=new Bundle();
+                bundle.putString(FirebaseAnalytics.Param.ITEM_ID,"btn_click");
+                bundle.putString(FirebaseAnalytics.Param.ITEM_NAME,"Next Activity");
+                bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE,"Button");
+                mFirebaseAnlytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT,bundle);
+
+
             }
         });
     }
+
+
 
     private void saveDataToDB() {
 
