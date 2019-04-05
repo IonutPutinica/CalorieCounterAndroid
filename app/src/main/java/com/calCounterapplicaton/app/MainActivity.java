@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.firebase.analytics.FirebaseAnalytics;
+
 import model.*;
 
 import data.DatabaseHandler;
@@ -20,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText mealName, mealCals;
     private Button submitButton;
     private DatabaseHandler dba;
+    private FirebaseAnalytics mFirebaseAnalytics;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
