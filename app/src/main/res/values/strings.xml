@@ -11,4 +11,5 @@
     <string name="food_total_text">Total calorie intake for today:</string>
     <string name="cal_text">Cal.</string>
     <string name="food_items_num">Meals eaten today:</string>
+    <string name="online_calorie_calculator">Online calorie calculator</string>
 </resources>

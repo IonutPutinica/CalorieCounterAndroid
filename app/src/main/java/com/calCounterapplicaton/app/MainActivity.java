@@ -21,6 +21,7 @@ import data.DatabaseHandler;
 public class MainActivity extends AppCompatActivity {
     private EditText mealName, mealCals;
     private Button submitButton;
+    private Button onlineButton;
     private DatabaseHandler dba;
     private FirebaseAnalytics mFirebaseAnlytics;
 
@@ -36,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         mealName = (EditText) findViewById(R.id.foodEditText);
         mealCals = (EditText) findViewById(R.id.caloriesEditText);
         submitButton = (Button) findViewById(R.id.submitButton);
-
+        onlineButton= (Button) findViewById(R.id.onlineCalculatorButton);
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -52,6 +53,13 @@ public class MainActivity extends AppCompatActivity {
                 mFirebaseAnlytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT,bundle);
 
 
+            }
+        });
+        onlineButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent online = new Intent(MainActivity.this, OnlineCalculatorActivity.class);
+                startActivity(online);
             }
         });
     }
